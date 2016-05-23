@@ -1,0 +1,12 @@
+*.ht*
+*.log
+*.org.md
+*.tpl.md
+*~
+.sass-cache/
+.tmp/
+/PROJECT.org.md
+/createProject.sh
+/templates/
+bower_components/
+node_modules/
