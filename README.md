@@ -166,7 +166,7 @@ Next time you open iTerms it starts with your prefared awesome window setup.
 
 ### Development by 
 
-Developer / Author: [Maik Ellerbrock](https://github.com/ellerbrock/) 
+Developer / Author: [Maik Ellerbrock](https://github.com/ellerbrock/)  
 Company: [Frapsoft](https://github.com/frapsoft/)
 
 
