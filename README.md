@@ -1,4 +1,4 @@
-![logo](https://github.frapsoft.com/top/fish-shell.png)  
+![Fish Shell](https://github.frapsoft.com/top/fish-shell.png)  
 
 # Fish Shell Setup OS X [![Gitter Chat](https://badges.gitter.im/frapsoft/frapsoft.svg)](https://gitter.im/frapsoft/frapsoft/)  
 
@@ -6,6 +6,9 @@
 
 
 Terminal Setup for OS X with [Fish Shell](https://fishshell.com/), [Fisherman](http://fisherman.sh/), [Powerline Fonts](https://github.com/powerline/fonts) and [iTerm2](https://www.iterm2.com/).
+
+
+![Fish Shell](https://github.frapsoft.com/screenshots/fish-shell-v3.png)  
 
 ## iTerm2
 
@@ -151,7 +154,47 @@ Next time you open iTerms it starts with your prefared awesome window setup.
 
 [![Fish Shell Screenshot](https://github.frapsoft.com/screenshots/fish-shell-v2.png)](https://github.frapsoft.com/screenshots/fish-shell-v2.png)
 
-### Happy fishing!
+
+# Aliases and Exports
+
+
+### Aliases
+
+```
+alias rmi "rm -i"
+
+# This is equivalent to entering the following function:
+
+function rmi
+    rm -i $argv
+end
+
+funcsave
+```
+
+<http://fishshell.com/docs/current/commands.html#alias>
+
+### Exports 
+
+`set -xU APIKEY "SEC112233" `  
+
+> x == export  
+> U == universal - meaning that you can access the Variable from other sessions or terminals as well.  
+
+`set --export PATH /usr/local/sbin $PATH` another way to export
+
+
+More details can be found here: 
+
+* <http://fishshell.com/docs/2.2/commands.html#set>  
+* <http://fishshell.com/docs/current/tutorial.html#tut_exports>
+
+
+## Fun Stuff
+
+* [ASCII Font Generator](http://patorjk.com/software/taag/#p=display&f=Doh&t=Frapsoft)
+* [20 Funny Terminal Commands](http://www.tecmint.com/20-funny-commands-of-linux-or-linux-is-fun-in-terminal/)
+
 
 
 ### Contact / Social Media
