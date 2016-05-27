@@ -1,9 +1,6 @@
 ![Fish Shell](https://github.frapsoft.com/top/fish-shell.png)  
 
-# Fish Shell Setup OS X [![Gitter Chat](https://badges.gitter.im/frapsoft/frapsoft.svg)](https://gitter.im/frapsoft/frapsoft/)  
-
-
-
+# Fish Shell Setup OS X [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v101)](https://github.com/ellerbrock/open-source-badge/) [![Gitter Chat](https://badges.gitter.im/frapsoft/frapsoft.svg)](https://gitter.im/frapsoft/frapsoft/)
 
 Terminal Setup for OS X with [Fish Shell](https://fishshell.com/), [Fisherman](http://fisherman.sh/), [Powerline Fonts](https://github.com/powerline/fonts) and [iTerm2](https://www.iterm2.com/).
 
@@ -29,7 +26,6 @@ cp /usr/local/etc/fonts/fonts.conf.bak /usr/local/etc/fonts/fonts.conf
 git clone https://github.com/powerline/fonts.git
 ./fonts/install.sh
 ```
-
 
 
 ## Fish Shell
@@ -157,7 +153,6 @@ Next time you open iTerms it starts with your prefared awesome window setup.
 
 # Aliases and Exports
 
-
 ### Aliases
 
 ```
@@ -194,9 +189,7 @@ More details can be found here:
 
 * [ASCII Font Generator](http://patorjk.com/software/taag/#p=display&f=Doh&t=Frapsoft)
 * [20 Funny Terminal Commands](http://www.tecmint.com/20-funny-commands-of-linux-or-linux-is-fun-in-terminal/)
-
-
-
+* [Open Source Badge](https://github.com/ellerbrock/open-source-badge/)
 ### Contact / Social Media
 
 *Get the latest News about Web Development, Open Source, Tooling, Server & Security*

@@ -7,6 +7,7 @@
 .tmp/
 /PROJECT.org.md
 /createProject.sh
+/local/
 /templates/
 bower_components/
 node_modules/
