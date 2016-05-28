@@ -1,11 +1,11 @@
 ![Fish Shell](https://github.frapsoft.com/top/fish-shell.png)  
 
-# Fish Shell Setup OS X [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v101)](https://github.com/ellerbrock/open-source-badge/) [![Gitter Chat](https://badges.gitter.im/frapsoft/frapsoft.svg)](https://gitter.im/frapsoft/frapsoft/)
+# Fish Shell Setup OS X [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) [![Gitter Chat](https://badges.gitter.im/frapsoft/frapsoft.svg)](https://gitter.im/frapsoft/frapsoft/)
 
 Terminal Setup for OS X with [Fish Shell](https://fishshell.com/), [Fisherman](http://fisherman.sh/), [Powerline Fonts](https://github.com/powerline/fonts) and [iTerm2](https://www.iterm2.com/).
 
 
-![Fish Shell](https://github.frapsoft.com/screenshots/fish-shell-v3.png)  
+![Fish Shell](https://github.frapsoft.com/screenshots/fish-shell-v4.jpg)  
 
 ## iTerm2
 
@@ -189,7 +189,14 @@ More details can be found here:
 
 * [ASCII Font Generator](http://patorjk.com/software/taag/#p=display&f=Doh&t=Frapsoft)
 * [20 Funny Terminal Commands](http://www.tecmint.com/20-funny-commands-of-linux-or-linux-is-fun-in-terminal/)
-* [Open Source Badge](https://github.com/ellerbrock/open-source-badge/)
+* [Open Source Badge](https://github.com/ellerbrock/open-source-badge/)  
+
+## Other useful Resources
+
+* [Awesome fish](https://github.com/brj/awesome-fish) - A curated list of awesome tools, prompts and other cool nuggets for the amazing fish-shell.
+* [Fish Shell Cookbook](https://github.com/brj/fish-shell-cookbook) - Tips and recipes for fish, from shell to plate.
+* [Awesome OS X Command Line](https://github.com/herrbischoff/awesome-osx-command-line) - Use your OS X terminal shell to do awesome things.
+
 ### Contact / Social Media
 
 *Get the latest News about Web Development, Open Source, Tooling, Server & Security*
