@@ -4,8 +4,174 @@
 
 Terminal Setup for OS X with [Fish Shell](https://fishshell.com/), [Fisherman](http://fisherman.sh/), [Powerline Fonts](https://github.com/powerline/fonts) and [iTerm2](https://www.iterm2.com/).
 
-
 ![Fish Shell](https://github.frapsoft.com/screenshots/fish-shell-v4.jpg)  
+
+## Update Info
+
+This weekend i had to reinstall my Macbook and copy and pasted from my own tutorial here.
+I thought it would be need to automate the part with the installation.  
+
+You can run the Script to Install Fish Shell, Fisherman, Powerline Fonts and iTerm2 for OS X.  
+
+Automated Installation:  
+`curl https://github.com/ellerbrock/tutorial-fish-shell-setup-osx/blob/master/install.sh | bash`  
+
+or download and execute it manual from the root of this Repository, named install.sh.  
+
+### Source of `install.sh`  
+
+```bash
+#!/usr/bin/env bash
+
+# Author    Maik Ellerbrock
+# Github    https://github.com/ellerbrock/
+# Company   Frapsoft
+# Twitter   @frapsoft
+# Homepage  https://frapsoft.com
+# Version   1.1.7
+# License   MIT
+
+
+# Information
+# -----------
+# Shell script to automate the installation steps provided in the tutorial
+
+# Links
+# -----
+# - Tutorial:               https://github.com/ellerbrock/tutorial-fish-shell-setup-osx/
+# - Homebrew Website:       http://brew.sh/
+# - iTerm2 Website:         https://www.iterm2.com/
+# - iTerm2 Colour Schemes:  http://iterm2colorschemes.com/
+# - Fish Shell:             https://fishshell.com/
+# - Fisherman:              http://fisherman.sh/
+# - Powerline Fonts:        https://github.com/powerline/fonts
+
+
+# Configuration
+# -------------
+HOMEBREW="https://raw.githubusercontent.com/Homebrew/install/master/install"
+COLOUR_THEMES="https://github.com/mbadolato/iTerm2-Color-Schemes/tarball/master"
+
+
+# Functions
+# ---------
+
+homebrew_install()
+{
+  echo "It seems you don't have Homebrew installed."
+  echo
+  read -p "Install Homebrew? (y/n) " -n 1 answere
+  echo
+  if [[ $answere == "y" || $answere == "Y" ]]; then
+    ruby -e "$($HOMEBREW)"
+  else
+    echo "Sorry, for this automated Script we need Homebrew."
+    echo "closing ..."
+    exit 1
+  fi
+}
+
+
+ascii_font()
+{
+  echo '    _____      __            __         ____  '
+  echo '   / __(_)____/ /_     _____/ /_  ___  / / /  '
+  echo '  / /_/ / ___/ __ \   / ___/ __ \/ _ \/ / /   '
+  echo ' / __/ (__  ) / / /  (__  ) / / /  __/ / /    '
+  echo '/_/ /_/____/_/ /_/  /____/_/ /_/\___/_/_/     '
+  echo '                                              '
+  echo '        awesome fish shell setup              '
+  echo '                                              '
+  echo '                                              '
+}
+
+
+# Execute the Shell Script
+ascii_font
+
+# Test if Homebrew is installed
+test -x brew || homebrew_install
+
+echo "updating Homebrew ..."
+brew update
+brew upgrade
+
+read -p "Install iTerms2 ? (y/n) " -n 1 answere
+echo
+if [[ $answere == "y" || $answere == "Y" ]]; then
+  brew install caskroom/cask/brew-cask
+  brew cask install iterm2
+
+  read -p "Download iTerm2 Colour Schemes ? (y/n) " -n 1 answere
+  echo
+  if [[ $answere == "y" || $answere == "Y" ]]; then
+    curl -o $COLOUR_THEMES
+  fi
+fi
+
+
+read -p "Install Fish Shell ? (y/n) " -n 1 answere
+echo
+if [[ $answere == "y" || $answere == "Y" ]]; then
+brew install fish --HEAD
+
+    read -p "Install Fisherman ? (y/n) " -n 1 answere
+    echo
+    if [[ $answere == "y" || $answere == "Y" ]]; then
+      brew tap fisherman/tap
+      brew install --HEAD fisherman
+      echo "updating Fisher ...."
+      fisher up
+
+      read -p "Install useful Fisherman Plugins: z + bass ? (y/n) " -n 1 answere
+      echo
+      if [[ $answere == "y" || $answere == "Y" ]]; then
+        echo "Installing Fisher Plugin z + bass"
+        fisher z bass
+      fi
+    fi
+fi
+
+
+read -p "Install Powerline Fonts ? (y/n) " -n 1 answere
+echo
+if [[ $answere == "y" || $answere == "Y" ]]; then
+  brew install git fontconfig
+  cp /usr/local/etc/fonts/fonts.conf.bak /usr/local/etc/fonts/fonts.conf
+
+  git clone https://github.com/powerline/fonts.git
+  ./fonts/install.sh
+fi
+
+
+read -p "Install Budspencer Theme for the Fish Shell ? (y/n) " -n 1 answere
+echo
+if [[ $answere == "y" || $answere == "Y" ]]; then
+  brew install --with-default-names gnu-sed
+  fisher omf/theme-budspencer
+  set -U budspencer_nogreeting
+  set -U fish_key_bindings fish_vi_key_bindings
+  fish_update_completions
+fi
+
+clear
+
+echo "Setup finished"
+echo "--------------"
+echo
+echo "For further information i recommend reading the Fish Shell Documentation"
+echo
+
+read -p "Should i open the Fish Shell Documentation for you ? (y/n) " -n 1 answere
+echo
+if [[ $answere == "y" || $answere == "Y" ]]; then
+  open http://fishshell.com/docs/current/
+fi
+
+echo
+echo "closing ..."
+
+```
 
 ## iTerm2
 
@@ -197,6 +363,7 @@ More details can be found here:
 * [Fish Shell Cookbook](https://github.com/brj/fish-shell-cookbook) - Tips and recipes for fish, from shell to plate.
 * [Awesome OS X Command Line](https://github.com/herrbischoff/awesome-osx-command-line) - Use your OS X terminal shell to do awesome things.
 
+
 ### Contact / Social Media
 
 *Get the latest News about Web Development, Open Source, Tooling, Server & Security*
@@ -213,8 +380,7 @@ Developer / Author: [Maik Ellerbrock](https://github.com/ellerbrock/)
 Company: [Frapsoft](https://github.com/frapsoft/)
 
 
-### License 
+### License
 
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
-
-This work by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/ellerbrock/" property="cc:attributionName" rel="cc:attributionURL">Maik Ellerbrock</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+Copyright (c) 2016 [Maik Ellerbrock](https://github.com/ellerbrock/)  
+MIT: <https://opensource.org/licenses/mit-license.php>
