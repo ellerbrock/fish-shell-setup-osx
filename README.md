@@ -245,6 +245,7 @@ Installation:
 * `fisher ls-remote` list all available plugins
 * `fisher z` autocompletion for most used directories  
 * `fisher bass` for better bash compatibility  
+* `fisher cprintf` printf with colours
 * `brew install fzf; fisher fzf` fuzzing finder
 * `brew install grc; fisher grc`  colourizer for terminal apps  
 

@@ -41,6 +41,9 @@ homebrew_install()
   echo
   if [[ $answere == "y" || $answere == "Y" ]]; then
     ruby -e "$($HOMEBREW)"
+    echo "updating Homebrew ..."
+    brew update
+    brew upgrade
   else
     echo "Sorry, for this automated Script we need Homebrew."
     echo "closing ..."
@@ -68,10 +71,6 @@ ascii_font
 
 # Test if Homebrew is installed
 test -x brew || homebrew_install
-
-echo "updating Homebrew ..."
-brew update
-brew upgrade
 
 read -p "Install iTerms2 ? (y/n) " -n 1 answere
 echo
