@@ -105,6 +105,16 @@ brew install fish --HEAD
         echo "Installing Fisher Plugin z + bass"
         fisher z bass
       fi
+
+      read -p "Install Budspencer Theme for the Fish Shell ? (y/n) " -n 1 answere
+      echo
+      if [[ $answere == "y" || $answere == "Y" ]]; then
+        brew install --with-default-names gnu-sed
+        fisher omf/theme-budspencer
+        set -U budspencer_nogreeting
+        set -U fish_key_bindings fish_vi_key_bindings
+        fish_update_completions
+      fi
     fi
 fi
 
@@ -117,17 +127,6 @@ if [[ $answere == "y" || $answere == "Y" ]]; then
 
   git clone https://github.com/powerline/fonts.git
   ./fonts/install.sh
-fi
-
-
-read -p "Install Budspencer Theme for the Fish Shell ? (y/n) " -n 1 answere
-echo
-if [[ $answere == "y" || $answere == "Y" ]]; then
-  brew install --with-default-names gnu-sed
-  fisher omf/theme-budspencer
-  set -U budspencer_nogreeting
-  set -U fish_key_bindings fish_vi_key_bindings
-  fish_update_completions
 fi
 
 clear

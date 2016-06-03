@@ -8,7 +8,7 @@ Terminal Setup for OS X with [Fish Shell](https://fishshell.com/), [Fisherman](h
 
 ## Quick Install
 
-Can't wait to run the fish shell?<br>
+Can't wait to run the fish shell?  
 You can run the [install.sh](https://github.com/ellerbrock/tutorial-fish-shell-setup-osx/blob/master/install.sh) to install the [Fish Shell](https://fishshell.com/), [Fisherman](http://fisherman.sh/), [Powerline Fonts](https://github.com/powerline/fonts) and [iTerm2](https://www.iterm2.com/).
 
 `curl https://github.com/ellerbrock/tutorial-fish-shell-setup-osx/blob/master/install.sh | bash`
@@ -33,12 +33,12 @@ git clone https://github.com/powerline/fonts.git
 
 ## Fish Shell
 
-Fish Shell Installation (latest):<br>
+Fish Shell Installation (latest):  
 `brew install fish --HEAD`
 
 add the shell to the system know shells: `echo /usr/local/bin/fish | sudo tee -a /etc/shells`
 
-make fish your default shell:<br>
+make fish your default shell:  
 `chsh -s /usr/local/bin/fish`
 
 The Fish Shell configuration folder is located under: `~/.config/fish/`
@@ -74,7 +74,7 @@ alias myrsync "rsync -aihvP"
 
 Homepage: [fisherman.sh](http://fisherman.sh/)
 
-Installation:<br>
+Installation:  
 `curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman`
 
 - `fisher up` update all
@@ -138,15 +138,15 @@ exit 0
 
 ## iTerm default screen
 
-I use the terminal a lot and one windows is just not enought for me.<br>
+I use the terminal a lot and one windows is just not enought for me.  
 You can setup your default window in iTerm2 like you want, mine looks like this:
 
 [![Fish Shell Screenshot](https://github.frapsoft.com/screenshots/fish-shell-v1.png)](https://github.frapsoft.com/screenshots/fish-shell-v1.png)
 
 One big windows on the left for coding or more detailed stuff and two split windows on the right to quickly fire some commands.
 
-To Setup your window like you prefare just right click in the iTerms windows and say "Split Pane Vertically or Horizontally" to your needs.<br>
-When you like it go to "Window -> Save Window Arrangment". For the last step go to "Preferences -> Arrangment" and set it to default.<br>
+To Setup your window like you prefare just right click in the iTerms windows and say "Split Pane Vertically or Horizontally" to your needs.  
+When you like it go to "Window -> Save Window Arrangment". For the last step go to "Preferences -> Arrangment" and set it to default.  
 Next time you open iTerms it starts with your prefared awesome window setup.
 
 [![Fish Shell Screenshot](https://github.frapsoft.com/screenshots/fish-shell-v2.png)](https://github.frapsoft.com/screenshots/fish-shell-v2.png)
@@ -173,7 +173,7 @@ funcsave
 
 `set -xU APIKEY "SEC112233"`
 
-> x == export<br>
+> x == export  
 > U == universal - meaning that you can access the Variable from other sessions or terminals as well.
 
 `set --export PATH /usr/local/sbin $PATH` another way to export
