@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Fish Shell Setup OS X by ellerbrock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Fish Shell Setup OS X</h1>
+      <h2 class="project-tagline">Tutorial: Fish, Fisherman, Powerline Fonts + iTerm2</h2>
+      <a href="https://github.com/ellerbrock/fish-shell-setup-osx" class="btn">View on GitHub</a>
+      <a href="https://github.com/ellerbrock/fish-shell-setup-osx/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/ellerbrock/fish-shell-setup-osx/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p><img src="https://github.frapsoft.com/top/fish-shell.png" alt="Fish Shell"></p>
+
+<h1>
+<a id="fish-shell-setup-os-x--" class="anchor" href="#fish-shell-setup-os-x--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fish Shell Setup OS X <a href="https://github.com/ellerbrock/open-source-badge/"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=102" alt="Open Source Love"></a> <a href="https://gitter.im/frapsoft/frapsoft/"><img src="https://badges.gitter.im/frapsoft/frapsoft.svg" alt="Gitter Chat"></a>
+</h1>
+
+<p>Terminal Setup for OS X with <a href="https://fishshell.com/">Fish Shell</a>, <a href="http://fisherman.sh/">Fisherman</a>, <a href="https://github.com/powerline/fonts">Powerline Fonts</a> and <a href="https://www.iterm2.com/">iTerm2</a>.</p>
+
+<p><img src="https://github.frapsoft.com/screenshots/fish-shell-v4.jpg" alt="Fish Shell"></p>
+
+<h2>
+<a id="quick-install" class="anchor" href="#quick-install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quick Install</h2>
+
+<p>Can't wait to run the fish shell?<br>
+You can run the <a href="https://github.com/ellerbrock/tutorial-fish-shell-setup-osx/blob/master/install.sh">install.sh</a> to install the <a href="https://fishshell.com/">Fish Shell</a>, <a href="http://fisherman.sh/">Fisherman</a>, <a href="https://github.com/powerline/fonts">Powerline Fonts</a> and <a href="https://www.iterm2.com/">iTerm2</a>.</p>
+
+<p><code>curl https://github.com/ellerbrock/tutorial-fish-shell-setup-osx/blob/master/install.sh | bash</code></p>
+
+<h2>
+<a id="iterm2" class="anchor" href="#iterm2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>iTerm2</h2>
+
+<ul>
+<li>Download and Install <a href="https://www.iterm2.com/">iTerm2</a> - a better Terminal for OS X.</li>
+<li>
+<a href="http://iterm2colorschemes.com/">iTerm2 Color Schemas</a> - Color Themes for iTerm2</li>
+</ul>
+
+<h2>
+<a id="powerline-fonts" class="anchor" href="#powerline-fonts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Powerline Fonts</h2>
+
+<ul>
+<li><a href="https://github.com/powerline/fonts">https://github.com/powerline/fonts</a></li>
+<li><a href="https://github.com/gabrielelana/awesome-terminal-fonts">https://github.com/gabrielelana/awesome-terminal-fonts</a></li>
+</ul>
+
+<pre><code>brew install fontconfig
+cp /usr/local/etc/fonts/fonts.conf.bak /usr/local/etc/fonts/fonts.conf
+
+git clone https://github.com/powerline/fonts.git
+./fonts/install.sh
+</code></pre>
+
+<h2>
+<a id="fish-shell" class="anchor" href="#fish-shell" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fish Shell</h2>
+
+<p>Fish Shell Installation (latest):<br>
+<code>brew install fish --HEAD</code></p>
+
+<p>add the shell to the system know shells: <code>echo /usr/local/bin/fish | sudo tee -a /etc/shells</code></p>
+
+<p>make fish your default shell:<br>
+<code>chsh -s /usr/local/bin/fish</code></p>
+
+<p>The Fish Shell configuration folder is located under: <code>~/.config/fish/</code></p>
+
+<p>The main configuration file is: <code>~/.config/fish/config.fish</code>, i source here 2 files.</p>
+
+<pre><code>source ~/.fish_aliases
+source ~/.fish_variables
+</code></pre>
+
+<p>create a file <code>~/.fish_variables</code> to source your variables:</p>
+
+<pre><code># Setup your Github Token
+set --export HOMEBREW_GITHUB_API_TOKEN "01010101010101010101010101"
+
+# add /usr/local/sbin to your PATH Variable
+set --export PATH /usr/local/sbin $PATH
+</code></pre>
+
+<p>create a file <code>~/.fish_aliases</code> to source your aliases:</p>
+
+<pre><code>alias l "ls -alF"
+alias .. "cd .."
+alias sshserver "ssh user@server.dev"
+alias updatedb "sudo /usr/libexec/locate.updatedb"
+alias myrsync "rsync -aihvP"
+</code></pre>
+
+<h2>
+<a id="fisherman-fish-shell-extension--plugins" class="anchor" href="#fisherman-fish-shell-extension--plugins" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fisherman (Fish Shell Extension / Plugins)</h2>
+
+<p>Homepage: <a href="http://fisherman.sh/">fisherman.sh</a></p>
+
+<p>Installation:<br>
+<code>curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman</code></p>
+
+<ul>
+<li>
+<code>fisher up</code> update all</li>
+<li>
+<code>fisher ls-remote</code> list all available plugins</li>
+<li>
+<code>fisher z</code> autocompletion for most used directories</li>
+<li>
+<code>fisher bass</code> for better bash compatibility</li>
+<li>
+<code>fisher cprintf</code> printf with colours</li>
+<li>
+<code>fisher docker-completion</code> docker completion</li>
+<li>
+<code>brew install fzf; fisher fzf</code> fuzzing finder</li>
+<li>
+<code>brew install grc; fisher grc</code> colourizer for terminal apps</li>
+</ul>
+
+<h2>
+<a id="themes" class="anchor" href="#themes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Themes</h2>
+
+<p>A <a href="https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md">list with screenshots</a> of available themes.</p>
+
+<p>I like the Budspencer Theme, so lets install it.</p>
+
+<p>Make sure sure you have install Fish in the latest Version (<code>brew install fish --HEAD</code>) to run the budspencer theme.</p>
+
+<p><code>brew install --with-default-names gnu-sed</code> install dependencies</p>
+
+<p><code>fisher omf/theme-budspencer</code> install the theme budspencer</p>
+
+<p>Theme Setup:</p>
+
+<pre><code>set -U budspencer_nogreeting
+set -U fish_key_bindings fish_vi_key_bindings
+</code></pre>
+
+<h2>
+<a id="tipps--tricks" class="anchor" href="#tipps--tricks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tipps &amp; Tricks</h2>
+
+<p><code>fish_update_completions</code> run this once in a while to make the fish prompt aware of available commands and parameters</p>
+
+<h2>
+<a id="update-script" class="anchor" href="#update-script" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Update Script</h2>
+
+<p>If you run this more often makes then you can put an alias to this file in your `~/.fish_aliases we talked about above.</p>
+
+<pre><code>#!/usr/bin/env fish
+
+echo 'start updating ...'
+
+echo 'updating homebrew'
+brew update
+brew upgrade
+brew cleanup
+
+echo 'updating fish shell'
+fisher up
+fish_update_completions
+
+echo 'updating npm'
+npm update -g
+
+echo 'checking Apple Updates'
+/usr/sbin/softwareupdate -ia
+
+exit 0
+</code></pre>
+
+<h2>
+<a id="iterm-default-screen" class="anchor" href="#iterm-default-screen" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>iTerm default screen</h2>
+
+<p>I use the terminal a lot and one windows is just not enought for me.<br>
+You can setup your default window in iTerm2 like you want, mine looks like this:</p>
+
+<p><a href="https://github.frapsoft.com/screenshots/fish-shell-v1.png"><img src="https://github.frapsoft.com/screenshots/fish-shell-v1.png" alt="Fish Shell Screenshot"></a></p>
+
+<p>One big windows on the left for coding or more detailed stuff and two split windows on the right to quickly fire some commands.</p>
+
+<p>To Setup your window like you prefare just right click in the iTerms windows and say "Split Pane Vertically or Horizontally" to your needs.<br>
+When you like it go to "Window -&gt; Save Window Arrangment". For the last step go to "Preferences -&gt; Arrangment" and set it to default.<br>
+Next time you open iTerms it starts with your prefared awesome window setup.</p>
+
+<p><a href="https://github.frapsoft.com/screenshots/fish-shell-v2.png"><img src="https://github.frapsoft.com/screenshots/fish-shell-v2.png" alt="Fish Shell Screenshot"></a></p>
+
+<h1>
+<a id="aliases-and-exports" class="anchor" href="#aliases-and-exports" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Aliases and Exports</h1>
+
+<h2>
+<a id="aliases" class="anchor" href="#aliases" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Aliases</h2>
+
+<pre><code>alias rmi "rm -i"
+
+# This is equivalent to entering the following function:
+
+function rmi
+    rm -i $argv
+end
+
+funcsave
+</code></pre>
+
+<p><a href="http://fishshell.com/docs/current/commands.html#alias">http://fishshell.com/docs/current/commands.html#alias</a></p>
+
+<h2>
+<a id="exports" class="anchor" href="#exports" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Exports</h2>
+
+<p><code>set -xU APIKEY "SEC112233"</code></p>
+
+<blockquote>
+<p>x == export<br>
+U == universal - meaning that you can access the Variable from other sessions or terminals as well.</p>
+</blockquote>
+
+<p><code>set --export PATH /usr/local/sbin $PATH</code> another way to export</p>
+
+<p>More details can be found here:</p>
+
+<ul>
+<li><a href="http://fishshell.com/docs/2.2/commands.html#set">http://fishshell.com/docs/2.2/commands.html#set</a></li>
+<li><a href="http://fishshell.com/docs/current/tutorial.html#tut_exports">http://fishshell.com/docs/current/tutorial.html#tut_exports</a></li>
+</ul>
+
+<h2>
+<a id="fun-stuff" class="anchor" href="#fun-stuff" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fun Stuff</h2>
+
+<ul>
+<li><a href="http://patorjk.com/software/taag/#p=display&amp;f=Doh&amp;t=Frapsoft">ASCII Font Generator</a></li>
+<li><a href="http://www.tecmint.com/20-funny-commands-of-linux-or-linux-is-fun-in-terminal/">20 Funny Terminal Commands</a></li>
+<li><a href="https://github.com/ellerbrock/open-source-badge/">Open Source Badge</a></li>
+</ul>
+
+<h2>
+<a id="other-useful-resources" class="anchor" href="#other-useful-resources" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Other useful Resources</h2>
+
+<ul>
+<li>
+<a href="https://github.com/brj/awesome-fish">Awesome fish</a> - A curated list of awesome tools, prompts and other cool nuggets for the amazing fish-shell.</li>
+<li>
+<a href="https://github.com/brj/fish-shell-cookbook">Fish Shell Cookbook</a> - Tips and recipes for fish, from shell to plate.</li>
+<li>
+<a href="https://github.com/herrbischoff/awesome-osx-command-line">Awesome OS X Command Line</a> - Use your OS X terminal shell to do awesome things.</li>
+</ul>
+
+<h3>
+<a id="contact--social-media" class="anchor" href="#contact--social-media" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact / Social Media</h3>
+
+<p><em>Get the latest News about Web Development, Open Source, Tooling, Server &amp; Security</em></p>
+
+<p><a href="https://twitter.com/frapsoft/"><img src="https://github.frapsoft.com/social/twitter.png" alt="Twitter"></a>
+<a href="https://www.facebook.com/frapsoft/"><img src="https://github.frapsoft.com/social/facebook.png" alt="Facebook"></a>
+<a href="https://plus.google.com/116540931335841862774"><img src="https://github.frapsoft.com/social/google-plus.png" alt="Google+"></a>
+<a href="https://gitter.im/frapsoft/frapsoft/"><img src="https://github.frapsoft.com/social/gitter.png" alt="Gitter"></a>
+<a href="https://github.com/ellerbrock/"><img src="https://github.frapsoft.com/social/github.png" alt="Github"></a></p>
+
+<h3>
+<a id="development-by" class="anchor" href="#development-by" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Development by</h3>
+
+<p>Developer / Author: <a href="https://github.com/ellerbrock/">Maik Ellerbrock</a><br>
+Company: <a href="https://github.com/frapsoft/">Frapsoft</a></p>
+
+<h3>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h3>
+
+<p><a href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a><br></p>
+
+<p>This work by <a href="https://github.com/ellerbrock/">Maik Ellerbrock</a> is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/ellerbrock/fish-shell-setup-osx">Fish Shell Setup OS X</a> is maintained by <a href="https://github.com/ellerbrock">ellerbrock</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
