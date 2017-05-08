@@ -80,7 +80,7 @@ Installation:
 - `fisher up` update all
 - `fisher ls-remote` list all available plugins
 - `fisher z` autocompletion for most used directories
-- `fisher bass` for better bash compatibility
+- `fisher edc/bass` for better bash compatibility
 - `fisher cprintf` printf with colours
 - `fisher docker-completion` docker completion
 - `brew install fzf; fisher fzf` fuzzing finder
