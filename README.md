@@ -105,7 +105,7 @@ set -U budspencer_nogreeting
 set -U fish_key_bindings fish_vi_key_bindings
 ```
 
-## Tipps & Tricks
+## Tips & Tricks
 
 `fish_update_completions` run this once in a while to make the fish prompt aware of available commands and parameters
 
