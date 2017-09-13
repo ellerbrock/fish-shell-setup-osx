@@ -11,7 +11,7 @@ Terminal Setup for OS X with [Fish Shell](https://fishshell.com/), [Fisherman](h
 Can't wait to run the fish shell?  
 You can run the [install.sh](https://github.com/ellerbrock/tutorial-fish-shell-setup-osx/blob/master/install.sh) to install the [Fish Shell](https://fishshell.com/), [Fisherman](http://fisherman.sh/), [Powerline Fonts](https://github.com/powerline/fonts) and [iTerm2](https://www.iterm2.com/).
 
-`curl https://github.com/ellerbrock/tutorial-fish-shell-setup-osx/blob/master/install.sh | bash`
+`curl https://raw.githubusercontent.com/ellerbrock/fish-shell-setup-osx/master/install.sh | bash`
 
 ## iTerm2
 
