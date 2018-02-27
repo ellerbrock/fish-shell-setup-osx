@@ -72,7 +72,7 @@ alias myrsync "rsync -aihvP"
 
 ## Fisherman (Fish Shell Extension / Plugins)
 
-Homepage: [fisherman.sh](http://fisherman.sh/)
+Homepage: [fisherman](https://github.com/fisherman/fisherman)
 
 Installation:  
 `curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman`
