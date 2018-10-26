@@ -20,7 +20,7 @@
 # - iTerm2 Website:         https://www.iterm2.com/
 # - iTerm2 Colour Schemes:  http://iterm2colorschemes.com/
 # - Fish Shell:             https://fishshell.com/
-# - Fisherman:              http://fisherman.sh/
+# - Fisher:                 https://github.com/jorgebucaran/fisher
 # - Powerline Fonts:        https://github.com/powerline/fonts
 
 
@@ -91,29 +91,17 @@ echo
 if [[ $answere == "y" || $answere == "Y" ]]; then
 brew install fish --HEAD
 
-    read -p "Install Fisherman ? (y/n) " -n 1 answere
+    read -p "Install Fisher ? (y/n) " -n 1 answere
     echo
     if [[ $answere == "y" || $answere == "Y" ]]; then
-      brew tap fisherman/tap
-      brew install --HEAD fisherman
+      curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
       echo "updating Fisher ...."
-      fisher up
 
-      read -p "Install useful Fisherman Plugins: z + bass ? (y/n) " -n 1 answere
+      read -p "Install useful Fish Packages: z + bass ? (y/n) " -n 1 answere
       echo
       if [[ $answere == "y" || $answere == "Y" ]]; then
-        echo "Installing Fisher Plugin z + bass"
-        fisher z bass
-      fi
-
-      read -p "Install Budspencer Theme for the Fish Shell ? (y/n) " -n 1 answere
-      echo
-      if [[ $answere == "y" || $answere == "Y" ]]; then
-        brew install --with-default-names gnu-sed
-        fisher omf/theme-budspencer
-        set -U budspencer_nogreeting
-        set -U fish_key_bindings fish_vi_key_bindings
-        fish_update_completions
+        echo "Installing packages z, and bass"
+        fish -c "fisher add jethrokuan/z edc/bass"
       fi
     fi
 fi

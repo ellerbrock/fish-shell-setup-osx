@@ -2,14 +2,14 @@
 
 # Fish Shell Setup OS X [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/) [![Gitter Chat](https://badges.gitter.im/frapsoft/frapsoft.svg)](https://gitter.im/frapsoft/frapsoft/)
 
-Terminal Setup for OS X with [Fish Shell](https://fishshell.com/), [Fisherman](http://fisherman.sh/), [Powerline Fonts](https://github.com/powerline/fonts) and [iTerm2](https://www.iterm2.com/).
+Terminal Setup for OS X with [Fish Shell](https://fishshell.com/), [Fisher](https://github.com/jorgebucaran/fisher), [Powerline Fonts](https://github.com/powerline/fonts) and [iTerm2](https://www.iterm2.com/).
 
 ![Fish Shell](https://github.frapsoft.com/screenshots/fish-shell-v4.jpg)
 
 ## Quick Install
 
-Can't wait to run the fish shell?  
-You can run the [install.sh](https://github.com/ellerbrock/tutorial-fish-shell-setup-osx/blob/master/install.sh) to install the [Fish Shell](https://fishshell.com/), [Fisherman](http://fisherman.sh/), [Powerline Fonts](https://github.com/powerline/fonts) and [iTerm2](https://www.iterm2.com/).
+Can't wait to run the fish shell?
+You can run the [install.sh](https://github.com/ellerbrock/tutorial-fish-shell-setup-osx/blob/master/install.sh) to install the [Fish Shell](https://fishshell.com/), [Fisher](https://github.com/jorgebucaran/fisher), [Powerline Fonts](https://github.com/powerline/fonts) and [iTerm2](https://www.iterm2.com/).
 
 `curl https://raw.githubusercontent.com/ellerbrock/fish-shell-setup-osx/master/install.sh | bash`
 
@@ -33,12 +33,12 @@ git clone https://github.com/powerline/fonts.git
 
 ## Fish Shell
 
-Fish Shell Installation (latest):  
+Fish Shell Installation (latest):
 `brew install fish --HEAD`
 
 add the shell to the system know shells: `echo /usr/local/bin/fish | sudo tee -a /etc/shells`
 
-make fish your default shell:  
+make fish your default shell:
 `chsh -s /usr/local/bin/fish`
 
 The Fish Shell configuration folder is located under: `~/.config/fish/`
@@ -70,21 +70,24 @@ alias updatedb "sudo /usr/libexec/locate.updatedb"
 alias myrsync "rsync -aihvP"
 ```
 
-## Fisherman (Fish Shell Extension / Plugins)
+## [Fisher](https://github.com/jorgebucaran/fisher) (A package manager for the fish shell)
 
-Homepage: [fisherman](https://github.com/fisherman/fisherman)
+[GitHub Repository](https://github.com/jorgebucaran/fisher)
 
-Installation:  
-`curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman`
+### Installation
 
-- `fisher up` update all
-- `fisher ls-remote` list all available plugins
-- `fisher z` autocompletion for most used directories
+```
+curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+```
+
+- `fisher` update all
+- `fisher add jethrokuan/z` autocompletion for most used directories
 - `fisher edc/bass` for better bash compatibility
-- `fisher cprintf` printf with colours
-- `fisher docker-completion` docker completion
-- `brew install fzf; fisher fzf` fuzzing finder
-- `brew install grc; fisher grc` colourizer for terminal apps
+- `fisher add Markcial/cprintf` printf with colours
+- `brew install fzf; fisher add jethrokuan/fzf` fuzzing finder
+- `brew install grc; fisher add fisherman/grc` colourizer for terminal apps
+
+See the [documentation](https://github.com/jorgebucaran/fisher) for details.
 
 ## Themes
 
@@ -138,15 +141,15 @@ exit 0
 
 ## iTerm default screen
 
-I use the terminal a lot and one windows is just not enought for me.  
+I use the terminal a lot and one windows is just not enought for me.
 You can setup your default window in iTerm2 like you want, mine looks like this:
 
 [![Fish Shell Screenshot](https://github.frapsoft.com/screenshots/fish-shell-v1.png)](https://github.frapsoft.com/screenshots/fish-shell-v1.png)
 
 One big windows on the left for coding or more detailed stuff and two split windows on the right to quickly fire some commands.
 
-To Setup your window like you prefare just right click in the iTerms windows and say "Split Pane Vertically or Horizontally" to your needs.  
-When you like it go to "Window -> Save Window Arrangment". For the last step go to "Preferences -> Arrangment" and set it to default.  
+To Setup your window like you prefare just right click in the iTerms windows and say "Split Pane Vertically or Horizontally" to your needs.
+When you like it go to "Window -> Save Window Arrangment". For the last step go to "Preferences -> Arrangment" and set it to default.
 Next time you open iTerms it starts with your prefared awesome window setup.
 
 [![Fish Shell Screenshot](https://github.frapsoft.com/screenshots/fish-shell-v2.png)](https://github.frapsoft.com/screenshots/fish-shell-v2.png)
@@ -173,7 +176,7 @@ funcsave
 
 `set -xU APIKEY "SEC112233"`
 
-> x == export  
+> x == export
 > U == universal - meaning that you can access the Variable from other sessions or terminals as well.
 
 `set --export PATH /usr/local/sbin $PATH` another way to export
@@ -197,7 +200,7 @@ More details can be found here:
 
 ### Contact / Social Media
 
-*Get the latest News about Web Development, Open Source, Tooling, Server & Security*
+_Get the latest News about Web Development, Open Source, Tooling, Server & Security_
 
 [![Twitter](https://github.frapsoft.com/social/twitter.png)](https://twitter.com/frapsoft/)
 [![Facebook](https://github.frapsoft.com/social/facebook.png)](https://www.facebook.com/frapsoft/)
@@ -205,13 +208,12 @@ More details can be found here:
 [![Gitter](https://github.frapsoft.com/social/gitter.png)](https://gitter.im/frapsoft/frapsoft/)
 [![Github](https://github.frapsoft.com/social/github.png)](https://github.com/ellerbrock/)
 
-### Development by 
+### Development by
 
-Developer / Author: [Maik Ellerbrock](https://github.com/ellerbrock/)  
+Developer / Author: [Maik Ellerbrock](https://github.com/ellerbrock/)
 Company: [Frapsoft](https://github.com/frapsoft/)
 
-
-### License 
+### License
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />
 
