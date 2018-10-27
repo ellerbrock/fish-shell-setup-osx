@@ -82,7 +82,7 @@ curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fi
 
 - `fisher` update all
 - `fisher add jethrokuan/z` autocompletion for most used directories
-- `fisher edc/bass` for better bash compatibility
+- `fisher add edc/bass` for better bash compatibility
 - `fisher add Markcial/cprintf` printf with colours
 - `brew install fzf; fisher add jethrokuan/fzf` fuzzing finder
 - `brew install grc; fisher add fisherman/grc` colourizer for terminal apps
